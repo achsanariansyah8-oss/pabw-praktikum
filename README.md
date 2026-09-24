@@ -1,60 +1,19 @@
-# \# Koleksi Game Saya
+# PABW — Achsan Ariansyah Hidayatullah — 25523011
 
-# 
+Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web, satu folder untuk setiap pertemuan.
 
-# Daftar beberapa game yang pernah saya mainkan beserta genre, platform, dan status permainan saya.
+## Pertemuan 3 — Halaman profil saya
 
-# 
+Topik halaman saya: koleksi buku di rak saya.
 
-# \## Navigasi
+- Judul halaman: Rak Buku Saya
+- Deskripsi: daftar buku yang saya miliki beserta status bacanya
+- Tautan navigasi: Daftar Buku, Tambah Buku, Tentang Saya
+- Dua bagian utama: Daftar Buku, Tambah Buku
+- Kolom tabel: judul, penulis, terbit, status baca
+- Kolom form: judul, penulis, status baca
+- Gambar: koleksi-1.webp
 
-# 
+## Catatan penggunaan AI
 
-# 1\. Koleksi Game
-
-# 2\. Tambah Game
-
-# 3\. Tentang Saya
-
-# 
-
-# \## Koleksi Game
-
-# 
-
-# | Nama Game | Genre | Platform | Status |
-
-# |---|---|---|---|
-
-# | Resident Evil 4 Remake | Survival Horror | PC | Selesai |
-
-# | Grand Theft Auto V | Action | PC | Sedang Dimainkan |
-
-# | Minecraft | Sandbox | PC | Sedang Dimainkan |
-
-# 
-
-# \## Tambah Game
-
-# 
-
-# Form untuk menambahkan koleksi game:
-
-# 
-
-# \- Nama Game
-
-# \- Genre
-
-# \- Platform
-
-# \- Status
-
-# 
-
-# \### Gambar
-
-# 
-
-# `game-favorit.jpg`
-
+Tulis bagian mana yang dibantu AI dan bagian mana yang Anda kerjakan sendiri atau tulis: tidak memakai AI
