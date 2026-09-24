@@ -4,16 +4,16 @@ Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web, satu f
 
 ## Pertemuan 3 — Halaman profil saya
 
-Topik halaman saya: koleksi buku di rak saya.
+Topik halaman saya: koleksi game yang pernah saya mainkan.
 
-- Judul halaman: Rak Buku Saya
-- Deskripsi: daftar buku yang saya miliki beserta status bacanya
-- Tautan navigasi: Daftar Buku, Tambah Buku, Tentang Saya
-- Dua bagian utama: Daftar Buku, Tambah Buku
-- Kolom tabel: judul, penulis, terbit, status baca
-- Kolom form: judul, penulis, status baca
-- Gambar: koleksi-1.webp
+- Judul halaman: Koleksi Game Saya
+- Deskripsi: Daftar beberapa game yang pernah saya mainkan beserta genre, platform, dan status permainan saya.
+- Tautan navigasi: Koleksi Game, Tambah Game, Tentang Saya
+- Dua bagian utama: Koleksi Game, Tambah Game
+- Kolom tabel: Nama Game, Genre, Platform, Status
+- Kolom form: Nama Game, Genre, Platform, Status
+- Gambar: game-favorit.jpg
 
 ## Catatan penggunaan AI
 
-Tulis bagian mana yang dibantu AI dan bagian mana yang Anda kerjakan sendiri atau tulis: tidak memakai AI
+Bagian perencanaan dan penyusunan README dibantu AI, sedangkan keputusan topik dan isi rencana disesuaikan dengan rencana saya sendiri.
