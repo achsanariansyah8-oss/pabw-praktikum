@@ -185,11 +185,30 @@
         </section>
 
         <section id="tambah-game">
-            <h2>Tambah Game</h2>
+    <h2>Tambah Game</h2>
 
-            <!-- Form akan dibuat di Lembar E -->
+    <form action="/simpan" method="post">
 
-        </section>
+        <p>
+            <label for="nama-game">Nama Game</label>
+            <input type="text" id="nama-game" name="nama-game" required>
+        </p>
+
+        <p>
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" required>
+        </p>
+
+        <p>
+            <label for="tahun-rilis">Tahun Rilis</label>
+            <input type="number" id="tahun-rilis" name="tahun-rilis" required>
+        </p>
+
+        <button type="submit">Simpan</button>
+
+    </form>
+
+</section>
 
     </main>
 
