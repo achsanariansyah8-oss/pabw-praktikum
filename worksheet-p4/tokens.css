@@ -1,0 +1,155 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --gray-50: #F7FAFF;
+    --gray-100: #EDF4FF;
+    --gray-200: #DDE9F7;
+    --gray-300: #C4D5E8;
+    --gray-400: #91A6BE;
+    --gray-500: #60758D;
+    --gray-600: #4D627A;
+    --gray-700: #334B66;
+    --gray-900: #172C43;
+
+    --blue-300: #A7D8FF;
+    --blue-400: #7FC4FF;
+    --blue-500: #5AAFFF;
+    --blue-600: #2F8FE4;
+    --blue-700: #1F70B8;
+
+    --cyan-300: #B5F0FF;
+    --cyan-400: #6DDEFF;
+    --cyan-500: #36C8EF;
+
+    --purple-300: #DDD4FF;
+    --purple-400: #BFAAFF;
+    --purple-500: #9476EF;
+
+    --pink-300: #FFD4E8;
+    --pink-400: #FFB0D4;
+    --pink-500: #F58BB8;
+
+    --orange-300: #FFE0C7;
+    --orange-400: #FFC08F;
+    --orange-500: #F19A5B;
+
+    --red-400: #D94D68;
+    --red-500: #B4233D;
+
+    --glass-white-05: rgba(255, 255, 255, 0.05);
+    --glass-white-08: rgba(255, 255, 255, 0.08);
+    --glass-white-10: rgba(255, 255, 255, 0.10);
+    --glass-white-14: rgba(255, 255, 255, 0.14);
+    --glass-white-18: rgba(255, 255, 255, 0.18);
+    --glass-white-22: rgba(255, 255, 255, 0.22);
+    --glass-white-26: rgba(255, 255, 255, 0.26);
+    --glass-white-28: rgba(255, 255, 255, 0.28);
+    --glass-white-30: rgba(255, 255, 255, 0.30);
+    --glass-white-34: rgba(255, 255, 255, 0.34);
+    --glass-white-40: rgba(255, 255, 255, 0.40);
+    --glass-white-45: rgba(255, 255, 255, 0.45);
+    --glass-white-55: rgba(255, 255, 255, 0.55);
+    --glass-white-70: rgba(255, 255, 255, 0.70);
+
+    --glow-blue-soft: rgba(47, 143, 228, 0.18);
+    --glow-blue-medium: rgba(47, 143, 228, 0.28);
+    --glow-blue-strong: rgba(31, 112, 184, 0.36);
+    --glow-cyan-soft: rgba(54, 200, 239, 0.13);
+    --glow-purple-soft: rgba(148, 118, 239, 0.18);
+    --glow-pink-soft: rgba(245, 139, 184, 0.08);
+    --glow-orange-soft: rgba(241, 154, 91, 0.10);
+
+    --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.16);
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.20);
+    --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.26);
+    --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.34);
+
+    --shadow-glow-blue: 0 0 40px rgba(47, 143, 228, 0.16);
+    --shadow-glow-purple: 0 0 50px rgba(148, 118, 239, 0.12);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 1.5rem;
+
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.4rem;
+    --radius-xl: 1.75rem;
+    --radius-full: 999px;
+
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-xl: 1.5rem;
+    --text-3xl: 2.25rem;
+
+    --line-normal: 1.6;
+
+    --dark-bg: #03050D;
+    --dark-bg-soft: #070B18;
+    --dark-surface: #0C1224;
+    --dark-border: #3A4B72;
+    --dark-fg: #F5F7FF;
+    --dark-muted: #AEBBD3;
+    --dark-primary: #9BBEFF;
+    --dark-danger: #FF93A2;
+    --dark-focus: #79E7FF;
+
+    --dark-glass-06: rgba(255, 255, 255, 0.06);
+    --dark-glass-10: rgba(255, 255, 255, 0.10);
+    --dark-glass-14: rgba(255, 255, 255, 0.14);
+    --dark-glass-20: rgba(255, 255, 255, 0.20);
+
+    --dark-blue-glow: rgba(47, 92, 200, 0.24);
+    --dark-purple-glow: rgba(136, 112, 240, 0.18);
+}
+
+:root {
+    --color-bg: var(--gray-200);
+    --color-bg-soft: var(--gray-100);
+
+    --color-fg: var(--gray-900);
+    --color-muted: var(--gray-600);
+
+    --color-surface: var(--glass-white-10);
+    --color-surface-soft: var(--glass-white-05);
+    --color-surface-hover: var(--glass-white-18);
+
+    --color-border: var(--glass-white-45);
+    --color-border-soft: var(--glass-white-28);
+    --color-border-highlight: var(--glass-white-70);
+
+    --color-primary: var(--blue-700);
+    --color-primary-soft: var(--glow-blue-soft);
+    --color-secondary: var(--blue-600);
+
+    --color-danger: var(--red-500);
+    --color-focus: var(--blue-700);
+
+    --glass-surface: var(--glass-white-10);
+    --glass-surface-strong: var(--glass-white-22);
+    --glass-highlight: var(--glass-white-70);
+
+    --page-glow-1: var(--glow-blue-medium);
+    --page-glow-2: var(--glow-purple-soft);
+    --page-glow-3: var(--glow-orange-soft);
+    --page-glow-4: var(--glow-pink-soft);
+
+    --nav-hover-bg: var(--glass-white-40);
+
+    --button-bg-start: var(--blue-600);
+    --button-bg-end: var(--blue-700);
+    --button-text: var(--white);
+
+    --input-bg: var(--glass-white-26);
+    --input-border: var(--glass-white-55);
+
+    --table-head-bg: var(--glass-white-34);
+    --table-row-bg: var(--glass-white-18);
+    --table-row-hover: var(--glass-white-30);
+
+    --caption-color: var(--gray-500);
+}

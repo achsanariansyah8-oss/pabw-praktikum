@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Game Saya</title>
+
+    <!-- Urutan CSS: token → dasar → layout → komponen → tema -->
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+
+<body>
+
+    <<header>
+    <div class="header-baris">
+
+        <input
+            type="checkbox"
+            id="tema"
+            class="pengalih-tema"
+        >
+
+        <label for="tema" class="tombol-tema">
+            Tema gelap
+        </label>
+
+        <h1>Koleksi Game Saya</h1>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li>
+                    <a href="#koleksi-game">Koleksi Game</a>
+                </li>
+                <li>
+                    <a href="#tambah-game">Tambah Game</a>
+                </li>
+                <li>
+                    <a href="#tentang-saya">Tentang Saya</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+    <main>
+
+        <section id="koleksi-game">
+            <h2>Koleksi Game</h2>
+
+            <table>
+                <caption>Daftar Game yang Pernah Saya Mainkan</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Nama Game</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Resident Evil 2 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 3 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 4 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 5</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 6</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 7</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil Village</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil Requiem (RE9)</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Last of Us Part I</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Last of Us Part II</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Attack on Titan</th>
+                        <td>Action</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Attack on Titan 2</th>
+                        <td>Action</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Silent Hill 2</th>
+                        <td>Psychological Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Silent Hill f</th>
+                        <td>Psychological Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">God of War</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">God of War II</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">God of War III</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">God of War (2018)</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/game-favorit.jpg"
+                     alt="Tangkapan layar game favorit yang pernah saya mainkan"
+                     width="640"
+                     height="360"
+                     loading="lazy">
+                <figcaption>Game favorit yang pernah saya mainkan.</figcaption>
+            </figure>
+
+        </section>
+
+        <section id="tambah-game">
+    <h2>Tambah Game</h2>
+
+    <form action="/simpan" method="post">
+
+        <p>
+            <label for="nama-game">Nama Game</label>
+            <input type="text" id="nama-game" name="nama-game" required>
+        </p>
+
+        <p>
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" required>
+        </p>
+
+        <p>
+            <label for="tahun-rilis">Tahun Rilis</label>
+            <input type="number" id="tahun-rilis" name="tahun-rilis" required>
+        </p>
+
+        <button type="submit">Simpan</button>
+
+    </form>
+
+</section>
+
+    </main>
+
+    <footer id="tentang-saya">
+        <p>Achsan Ariansyah Hidayatullah · 25523011 · 2026</p>
+    </footer>
+
+</body>
+
+</html>

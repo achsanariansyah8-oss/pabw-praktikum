@@ -1,0 +1,144 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: var(--dark-bg);
+        --color-bg-soft: var(--dark-bg-soft);
+
+        --color-fg: var(--dark-fg);
+        --color-muted: var(--dark-muted);
+
+        --color-surface: var(--dark-glass-06);
+        --color-surface-soft: var(--dark-glass-06);
+        --color-surface-hover: var(--dark-glass-14);
+
+        --color-border: #647593;
+        --color-border-soft: #647593;
+        --color-border-highlight: var(--dark-glass-20);
+
+        --color-primary: var(--dark-primary);
+        --color-primary-soft: var(--dark-blue-glow);
+        --color-secondary: var(--dark-focus);
+
+        --color-danger: var(--dark-danger);
+        --color-focus: var(--dark-focus);
+
+        --glass-surface: var(--dark-glass-06);
+        --glass-surface-strong: var(--dark-glass-10);
+        --glass-highlight: var(--dark-glass-20);
+
+        --page-glow-1: var(--dark-blue-glow);
+        --page-glow-2: var(--dark-purple-glow);
+        --page-glow-3: var(--dark-blue-glow);
+        --page-glow-4: var(--glow-pink-soft);
+
+        --nav-hover-bg: var(--dark-glass-14);
+
+        --button-bg-start: var(--blue-400);
+        --button-bg-end: var(--blue-600);
+        --button-text: var(--gray-900);
+
+        --input-bg: var(--dark-glass-06);
+        --input-border: var(--dark-border);
+
+        --table-head-bg: var(--dark-glass-10);
+        --table-row-bg: var(--dark-glass-06);
+        --table-row-hover: var(--dark-glass-10);
+
+        --caption-color: var(--dark-muted);
+    }
+}
+
+:root:has(#tema:checked) {
+    --color-bg: var(--dark-bg);
+    --color-bg-soft: var(--dark-bg-soft);
+
+    --color-fg: var(--dark-fg);
+    --color-muted: var(--dark-muted);
+
+    --color-surface: var(--dark-glass-06);
+    --color-surface-soft: var(--dark-glass-06);
+    --color-surface-hover: var(--dark-glass-14);
+
+    --color-border: #647593;
+    --color-border-soft: #647593;
+    --color-border-highlight: var(--dark-glass-20);
+
+    --color-primary: var(--dark-primary);
+    --color-primary-soft: var(--dark-blue-glow);
+    --color-secondary: var(--dark-focus);
+
+    --color-danger: var(--dark-danger);
+    --color-focus: var(--dark-focus);
+
+    --glass-surface: var(--dark-glass-06);
+    --glass-surface-strong: var(--dark-glass-10);
+    --glass-highlight: var(--dark-glass-20);
+
+    --page-glow-1: var(--dark-blue-glow);
+    --page-glow-2: var(--dark-purple-glow);
+    --page-glow-3: var(--dark-blue-glow);
+    --page-glow-4: var(--glow-pink-soft);
+
+    --nav-hover-bg: var(--dark-glass-14);
+
+    --button-bg-start: var(--blue-400);
+    --button-bg-end: var(--blue-600);
+    --button-text: var(--gray-900);
+
+    --input-bg: var(--dark-glass-06);
+    --input-border: var(--dark-border);
+
+    --table-head-bg: var(--dark-glass-10);
+    --table-row-bg: var(--dark-glass-06);
+    --table-row-hover: var(--dark-glass-10);
+
+    --caption-color: var(--dark-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:has(#tema:checked) {
+        --color-bg: var(--gray-200);
+        --color-bg-soft: var(--gray-100);
+
+        --color-fg: var(--gray-900);
+        --color-muted: var(--gray-600);
+
+        --color-surface: var(--glass-white-10);
+        --color-surface-soft: var(--glass-white-05);
+        --color-surface-hover: var(--glass-white-18);
+
+        --color-border: #456A96;
+        --color-border-soft: #456A96;
+        --color-border-highlight: var(--glass-white-70);
+
+        --color-primary: var(--blue-700);
+        --color-primary-soft: var(--glow-blue-soft);
+        --color-secondary: var(--blue-600);
+
+        --color-danger: var(--red-500);
+        --color-focus: var(--blue-700);
+
+        --glass-surface: var(--glass-white-10);
+        --glass-surface-strong: var(--glass-white-22);
+        --glass-highlight: var(--glass-white-70);
+
+        --page-glow-1: var(--glow-blue-medium);
+        --page-glow-2: var(--glow-purple-soft);
+        --page-glow-3: var(--glow-orange-soft);
+        --page-glow-4: var(--glow-pink-soft);
+
+        --nav-hover-bg: var(--glass-white-40);
+
+        --button-bg-start: var(--blue-500);
+        --button-bg-end: var(--blue-600);
+        --button-text: var(--white);
+
+        --input-bg: var(--glass-white-26);
+        --input-border: var(--glass-white-55);
+
+        --table-head-bg: var(--glass-white-34);
+        --table-row-bg: var(--glass-white-18);
+        --table-row-hover: var(--glass-white-30);
+
+        --caption-color: var(--gray-500);
+    }
+}
