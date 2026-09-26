@@ -40,7 +40,7 @@ Urutan stylesheet pada halaman:
 
 Token dibagi menjadi dua lapisan.
 
-Lapisan pertama berisi primitive token seperti warna, ukuran teks, jarak, radius, bayangan, dan warna efek.
+Lapisan pertama berisi primitive token seperti warna, ukuran teks, jarak, radius, bayangan, dan efek.
 
 Lapisan kedua berisi semantic token yang digunakan oleh komponen halaman.
 
@@ -64,23 +64,21 @@ Halaman mendukung:
 
 - Tema terang
 - Tema gelap berdasarkan preferensi sistem
-- Perubahan tema secara manual menggunakan checkbox CSS
+- Perubahan tema manual menggunakan checkbox CSS
 - Layout responsif
 - Navigasi Flexbox
 - Tabel responsif
 - Form dengan validasi visual
-- Fokus keyboard dengan :focus-visible
-- Validasi input dengan :user-invalid
+- Fokus keyboard dengan focus-visible
+- Validasi input dengan user-invalid
 
 ### Aksesibilitas dan Pengujian
 
-Hasil pengujian kontras dilakukan pada kedua tema.
-
-Nilai kontras yang diuji:
+Pengujian kontras dilakukan pada kedua tema.
 
 | Pasangan yang diuji | Tema terang | Tema gelap | Ambang |
 |---|---:|---:|---:|
-| Teks isi atas latar halaman | 11.55:1 | 19.03:1 | 4.5:1 |
+| Teks di atas latar halaman | 11.55:1 | 19.03:1 | 4.5:1 |
 | Teks tombol di atas warna utama | 4.18:1 | 4.81:1 | 4.5:1 |
 | Judul bagian di atas latar | 11.55:1 | 19.03:1 | 4.5:1 |
 | Garis fokus terhadap latar sekitarnya | 4.20:1 | 14.24:1 | 3:1 |
@@ -95,4 +93,4 @@ Hasil pengujian akhir:
 
 ### Catatan Penggunaan AI
 
-AI digunakan sebagai bantuan untuk memahami CSS, menyusun kode, dan melakukan pemeriksaan terhadap hasil pengerjaan. Keputusan topik, struktur halaman, dan hasil akhir disesuaikan dengan pekerjaan dan kebutuhan praktikum saya.
+AI digunakan sebagai bantuan untuk memahami CSS, menyusun kode, dan melakukan pemeriksaan terhadap hasil pengerjaan. Keputusan topik, struktur halaman, dan hasil akhir disesuaikan dengan kebutuhan dan rancangan pekerjaan praktikum saya.
