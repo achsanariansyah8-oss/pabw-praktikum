@@ -1,49 +1,98 @@
-# PABW — Achsan Ariansyah Hidayatullah — 25523011
+# PABW - Achsan Ariansyah Hidayatullah - 25523011
 
-Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web, satu folder untuk setiap pertemuan.
+Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web (PABW), dengan satu folder untuk setiap pertemuan.
 
-## Pertemuan 3 — Halaman profil saya
+## Pertemuan 3 - Halaman Profil Saya
 
 Topik halaman saya: koleksi game yang pernah saya mainkan.
 
 - Judul halaman: Koleksi Game Saya
-- Deskripsi: Daftar beberapa game yang pernah saya mainkan beserta genre, platform, dan status permainan saya.
+- Deskripsi: Daftar game yang pernah saya mainkan beserta genre, platform, dan status permainan saya.
 - Tautan navigasi: Koleksi Game, Tambah Game, Tentang Saya
 - Dua bagian utama: Koleksi Game, Tambah Game
 - Kolom tabel: Nama Game, Genre, Platform, Status
 - Kolom form: Nama Game, Genre, Platform, Status
 - Gambar: game-favorit.jpg
 
-## Catatan penggunaan AI
+## Pertemuan 4 - Design Token Halaman Profil
 
-Bagian perencanaan dan penyusunan README dibantu AI, sedangkan keputusan topik dan isi rencana disesuaikan dengan rencana saya sendiri.
+Pertemuan 4 mengembangkan halaman profil dari Pertemuan 3 menggunakan CSS terpisah dengan sistem design token, layout responsif, komponen form, dan tema terang serta gelap.
 
-## Pertemuan 4 — Design Token Halaman Profil
+### Berkas CSS
 
-- Berkas gaya yang akan dibuat:
-  - tokens.css
-  - base.css
-  - layout.css
-  - komponen.css
-  - tema.css
-- Tema tampilan: Liquid Glass sederhana dengan nuansa biru, putih, dan navy.
-- Warna utama: #2563EB.
-- Tujuan desain: tampilan sederhana, mudah dibaca, responsif, dan tetap mempertahankan struktur semantik dari Pertemuan 3.
+- tokens.css
+- base.css
+- layout.css
+- komponen.css
+- tema.css
 
-### Token yang saya tetapkan
+### Struktur CSS
 
-| Token | Nilai | Untuk apa |
-|---|---|---|
-| --color-primary | #2563EB | Tombol, tautan, penanda |
-| --color-fg | #0F172A | Warna teks utama |
-| --color-bg | #F4F8FF | Latar halaman |
-| --color-surface | #FFFFFF | Latar kartu dan panel |
-| --color-border | #CBD5E1 | Garis dan tepi |
-| --color-danger | #B00020 | Peringatan dan input tidak valid |
-| --color-focus | #1D4ED8 | Garis fokus keyboard |
-| --radius-md | 1rem | Sudut kartu dan tombol |
-| --space-4 | 1rem | Jarak standar antar elemen |
+Urutan stylesheet pada halaman:
 
-Kriteria selesai saya: mengubah warna utama dari satu baris di tokens.css harus mengubah warna tombol, tautan, judul, garis fokus, dan elemen aksen lainnya.
+1. tokens.css
+2. base.css
+3. layout.css
+4. komponen.css
+5. tema.css
 
-AI digunakan sebagai bantuan untuk memahami CSS, menyusun kode, dan melakukan pemeriksaan terhadap hasil pengerjaan. Tampilan akhir dan pemilihan desain merupakan rancangan saya sendiri.
+### Design Token
+
+Token dibagi menjadi dua lapisan.
+
+Lapisan pertama berisi primitive token seperti warna, ukuran teks, jarak, radius, bayangan, dan warna efek.
+
+Lapisan kedua berisi semantic token yang digunakan oleh komponen halaman.
+
+| Token | Tema terang | Tema gelap | Untuk apa |
+|---|---|---|---|
+| --color-primary | #1F70B8 | #9BBEFF | Warna utama |
+| --color-fg | #172C43 | #F5F7FF | Warna teks utama |
+| --color-bg | #DDE9F7 | #03050D | Latar halaman |
+| --color-surface | rgba(255,255,255,0.10) | rgba(255,255,255,0.06) | Permukaan kartu dan panel |
+| --color-border | rgba(255,255,255,0.45) | #3A4B72 | Garis dan tepi |
+| --color-danger | #B4233D | #FF93A2 | Pesan kesalahan dan input tidak valid |
+| --color-focus | #1F70B8 | #79E7FF | Fokus keyboard |
+| --radius-md | 1rem | 1rem | Radius kartu dan kontrol |
+| --space-4 | 1rem | 1rem | Jarak antar elemen |
+
+### Tampilan
+
+Tema halaman menggunakan konsep Liquid Glass dengan permukaan transparan, border lembut, efek blur, bayangan, dan aksen biru serta ungu.
+
+Halaman mendukung:
+
+- Tema terang
+- Tema gelap berdasarkan preferensi sistem
+- Perubahan tema secara manual menggunakan checkbox CSS
+- Layout responsif
+- Navigasi Flexbox
+- Tabel responsif
+- Form dengan validasi visual
+- Fokus keyboard dengan :focus-visible
+- Validasi input dengan :user-invalid
+
+### Aksesibilitas dan Pengujian
+
+Hasil pengujian kontras dilakukan pada kedua tema.
+
+Nilai kontras yang diuji:
+
+| Pasangan yang diuji | Tema terang | Tema gelap | Ambang |
+|---|---:|---:|---:|
+| Teks isi atas latar halaman | 11.55:1 | 19.03:1 | 4.5:1 |
+| Teks tombol di atas warna utama | 4.18:1 | 4.81:1 | 4.5:1 |
+| Judul bagian di atas latar | 11.55:1 | 19.03:1 | 4.5:1 |
+| Garis fokus terhadap latar sekitarnya | 4.20:1 | 14.24:1 | 3:1 |
+| Tepi kartu terhadap latar halaman | 4.57:1 | 3.38:1 | 3:1 |
+
+### Lighthouse
+
+Hasil pengujian akhir:
+
+- Performance: 100
+- Accessibility: 100
+
+### Catatan Penggunaan AI
+
+AI digunakan sebagai bantuan untuk memahami CSS, menyusun kode, dan melakukan pemeriksaan terhadap hasil pengerjaan. Keputusan topik, struktur halaman, dan hasil akhir disesuaikan dengan pekerjaan dan kebutuhan praktikum saya.
