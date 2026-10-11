@@ -94,3 +94,17 @@ Hasil pengujian akhir:
 ### Catatan Penggunaan AI
 
 AI digunakan sebagai bantuan untuk memahami CSS, menyusun kode, dan melakukan pemeriksaan terhadap hasil pengerjaan. Keputusan topik, struktur halaman, dan hasil akhir disesuaikan dengan kebutuhan dan rancangan pekerjaan praktikum saya.
+
+## Deklarasi Penggunaan AI — Pertemuan 8
+
+AI digunakan sebagai alat bantu belajar untuk memahami konsep JavaScript
+Modern ES6+, termasuk const, let, template literal, optional chaining,
+nullish coalescing, pure functions, array methods, spread operator,
+dan debugging.
+
+Bantuan AI digunakan untuk menjelaskan konsep, memberikan contoh kode,
+serta membantu memahami pesan error selama pengerjaan.
+
+Saya menjalankan dan menguji kode menggunakan browser dan Console,
+memeriksa hasilnya, serta mendokumentasikan hasil pengujian sesuai
+dengan pekerjaan yang saya lakukan.
