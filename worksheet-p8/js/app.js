@@ -196,3 +196,21 @@ console.log("\n=== E.4: ERROR NULL ===");
 
 const elemenUji = document.querySelector("#elemen-uji");
 console.log(elemenUji?.textContent ?? "Elemen tidak ditemukan");
+
+// F.3 - Eksperimen spread operator
+
+const profilAsli = { nama: "Achsan" };
+
+// Tanpa spread operator
+const salinanTanpaSpread = profilAsli;
+salinanTanpaSpread.nama = "Nama Berubah";
+
+console.log("Tanpa spread:", profilAsli.nama);
+
+// Dengan spread operator
+const profilKedua = { nama: "Achsan" };
+const salinanDenganSpread = { ...profilKedua };
+
+salinanDenganSpread.nama = "Nama Berubah";
+
+console.log("Dengan spread:", profilKedua.nama);
