@@ -5,7 +5,7 @@
 import { daftarProyek } from "./app.js";
 
 const projectList = document.querySelector("#koleksi-game tbody");
-const projectForm = document.querySelector("#tambah-game form");
+const projectForm = document.querySelector("#form-tambah-game");
 const nameInput = document.querySelector("#nama-game");
 const categoryInput = document.querySelector("#genre");
 const yearInput = document.querySelector("#tahun-rilis");
@@ -13,6 +13,7 @@ const yearInput = document.querySelector("#tahun-rilis");
 const projectContainer = document.querySelector("#daftar-proyek");
 const filterRow = document.querySelector("#filter");
 const emptyMessage = document.querySelector("#empty-message");
+const submitButton = document.querySelector("#tombol-simpan");
 
 console.log("=== PEMERIKSAAN DOM P9 ===");
 console.log("Daftar game:", projectList);
@@ -23,6 +24,7 @@ console.log("Input tahun:", yearInput);
 console.log("Daftar proyek:", projectContainer);
 console.log("Filter kategori:", filterRow);
 console.log("Pesan kosong:", emptyMessage);
+console.log("Tombol simpan:", submitButton);
 
 
 // ============================================
@@ -66,7 +68,7 @@ function buildCard(project) {
 // ============================================
 
 function render(list) {
-    // Kosongkan daftar agar kartu tidak berlipat.
+    // Hapus kartu lama agar tidak berlipat.
     projectContainer.replaceChildren();
 
     // Tampilkan pesan jika tidak ada proyek.
@@ -77,7 +79,7 @@ function render(list) {
 
     emptyMessage.hidden = true;
 
-    // Tampilkan setiap proyek sebagai kartu.
+    // Buat kartu untuk setiap proyek.
     list.forEach((project) => {
         projectContainer.append(buildCard(project));
     });
@@ -96,45 +98,240 @@ function markActiveButton(activeButton) {
 
 
 // ============================================
-// P9 - C.2 EVENT DELEGATION
-// Satu listener untuk semua tombol filter.
+// P9 - C.2 FILTER DENGAN EVENT DELEGATION
 // ============================================
+
+let activeCategory = "all";
 
 filterRow.addEventListener("click", (event) => {
     const button = event.target.closest("button");
 
-    // Abaikan klik yang bukan pada tombol filter.
+    // Abaikan klik yang bukan tombol filter.
     if (!button || !filterRow.contains(button)) {
         return;
     }
 
-    const category = button.dataset.category;
+    activeCategory = button.dataset.category;
 
-    // Filter proyek sesuai kategori.
+    // Pilih proyek sesuai kategori.
     const selected = daftarProyek.filter(
         (project) =>
-            category === "all" || project.kategori === category
+            activeCategory === "all" ||
+            project.kategori === activeCategory
     );
 
-    // Perbarui tombol aktif dan daftar kartu.
+    // Perbarui tombol aktif dan kartu.
     markActiveButton(button);
     render(selected);
 
-    console.log("Kategori dipilih:", category);
+    console.log("Kategori dipilih:", activeCategory);
     console.log("Jumlah proyek:", selected.length);
 });
 
 
 // ============================================
-// P9 - B/C. TAMPILKAN SEMUA PROYEK SAAT DIBUKA
+// P9 - D.1 MENAMPILKAN SEMUA PROYEK
 // ============================================
 
-// Tandai tombol Semua sebagai tombol aktif.
-const allButton = filterRow.querySelector('[data-category="all"]');
+const allButton = filterRow.querySelector(
+    '[data-category="all"]'
+);
 
 if (allButton) {
     markActiveButton(allButton);
 }
 
-// Tampilkan semua proyek ketika halaman dibuka.
 render(daftarProyek);
+
+
+// ============================================
+// P9 - D.2 VALIDASI FORMULIR
+// ============================================
+
+// Mengambil elemen pesan kesalahan.
+const nameError = document.querySelector("#error-nama-game");
+const categoryError = document.querySelector("#error-genre");
+const yearError = document.querySelector("#error-tahun-rilis");
+
+
+// Memeriksa nama game.
+function validateName() {
+    const value = nameInput.value.trim();
+
+    if (value === "") {
+        showError(nameInput, nameError, "Nama game wajib diisi.");
+        return false;
+    }
+
+    hideError(nameInput, nameError);
+    return true;
+}
+
+
+// Memeriksa genre.
+function validateCategory() {
+    const value = categoryInput.value.trim();
+
+    if (value === "") {
+        showError(categoryInput, categoryError, "Genre wajib diisi.");
+        return false;
+    }
+
+    hideError(categoryInput, categoryError);
+    return true;
+}
+
+
+// Memeriksa tahun rilis.
+function validateYear() {
+    const value = yearInput.value.trim();
+    const year = Number(value);
+    const currentYear = new Date().getFullYear();
+
+    if (value === "") {
+        showError(yearInput, yearError, "Tahun rilis wajib diisi.");
+        return false;
+    }
+
+    if (!Number.isInteger(year)) {
+        showError(yearInput, yearError, "Tahun harus berupa bilangan bulat.");
+        return false;
+    }
+
+    if (year < 1950 || year > currentYear) {
+        showError(
+            yearInput,
+            yearError,
+            `Tahun harus antara 1950 dan ${currentYear}.`
+        );
+        return false;
+    }
+
+    hideError(yearInput, yearError);
+    return true;
+}
+
+
+// Menampilkan pesan kesalahan.
+function showError(input, errorElement, message) {
+    input.setAttribute("aria-invalid", "true");
+    errorElement.textContent = message;
+    errorElement.hidden = false;
+}
+
+
+// Menghilangkan pesan kesalahan.
+function hideError(input, errorElement) {
+    input.setAttribute("aria-invalid", "false");
+    errorElement.textContent = "";
+    errorElement.hidden = true;
+}
+
+
+// Memeriksa seluruh input.
+function validateForm() {
+    const nameValid = validateName();
+    const categoryValid = validateCategory();
+    const yearValid = validateYear();
+
+    return nameValid && categoryValid && yearValid;
+}
+
+
+// Memperbarui status tombol Simpan.
+function updateSubmitButton() {
+    const nameValid = nameInput.value.trim() !== "";
+    const categoryValid = categoryInput.value.trim() !== "";
+    const year = Number(yearInput.value);
+    const currentYear = new Date().getFullYear();
+
+    const yearValid =
+        yearInput.value.trim() !== "" &&
+        Number.isInteger(year) &&
+        year >= 1950 &&
+        year <= currentYear;
+
+    submitButton.disabled = !(
+        nameValid &&
+        categoryValid &&
+        yearValid
+    );
+}
+
+
+// Validasi ulang ketika input berubah.
+nameInput.addEventListener("input", () => {
+    validateName();
+    updateSubmitButton();
+});
+
+categoryInput.addEventListener("input", () => {
+    validateCategory();
+    updateSubmitButton();
+});
+
+yearInput.addEventListener("input", () => {
+    validateYear();
+    updateSubmitButton();
+});
+
+
+// ============================================
+// P9 - D.3 MENANGANI SUBMIT FORMULIR
+// ============================================
+
+projectForm.addEventListener("submit", (event) => {
+    // Mencegah halaman dimuat ulang.
+    event.preventDefault();
+
+    // Hentikan proses jika input tidak valid.
+    if (!validateForm()) {
+        updateSubmitButton();
+        return;
+    }
+
+    // Buat objek proyek baru.
+    const newProject = {
+        nama: nameInput.value.trim(),
+        kategori: categoryInput.value.trim(),
+        tahun: Number(yearInput.value),
+        selesai: false
+    };
+
+    // Tambahkan proyek ke array.
+    daftarProyek.push(newProject);
+
+    console.log("=== PROYEK BARU DITAMBAHKAN ===");
+    console.table(daftarProyek);
+
+    // Tampilkan ulang daftar sesuai filter aktif.
+    const selected = daftarProyek.filter(
+        (project) =>
+            activeCategory === "all" ||
+            project.kategori === activeCategory
+    );
+
+    render(selected);
+
+    // Kosongkan formulir.
+    projectForm.reset();
+
+    // Sembunyikan semua pesan kesalahan.
+    hideError(nameInput, nameError);
+    hideError(categoryInput, categoryError);
+    hideError(yearInput, yearError);
+
+    // Nonaktifkan kembali tombol Simpan.
+    updateSubmitButton();
+
+    console.log("Proyek berhasil ditambahkan.");
+});
+
+
+// ============================================
+// P9 - D.4 KONDISI AWAL FORMULIR
+// ============================================
+
+updateSubmitButton();
+
+console.log("Validasi formulir siap digunakan.");

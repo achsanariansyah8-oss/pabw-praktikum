@@ -192,42 +192,52 @@
 
         <!-- FORM TAMBAH GAME -->
         <section id="tambah-game">
-            <h2>Tambah Game</h2>
+    <h2>Tambah Game</h2>
 
-            <form action="/simpan" method="post">
-                <p>
-                    <label for="nama-game">Nama Game</label>
-                    <input
-                        type="text"
-                        id="nama-game"
-                        name="nama-game"
-                        required
-                    >
-                </p>
+    <form id="form-tambah-game" novalidate>
+        <p>
+            <label for="nama-game">Nama Game</label>
+            <input
+                type="text"
+                id="nama-game"
+                name="nama-game"
+                required
+                aria-describedby="error-nama-game"
+            >
+            <small id="error-nama-game" class="error-message" hidden></small>
+        </p>
 
-                <p>
-                    <label for="genre">Genre</label>
-                    <input
-                        type="text"
-                        id="genre"
-                        name="genre"
-                        required
-                    >
-                </p>
+        <p>
+            <label for="genre">Genre</label>
+            <input
+                type="text"
+                id="genre"
+                name="genre"
+                required
+                aria-describedby="error-genre"
+            >
+            <small id="error-genre" class="error-message" hidden></small>
+        </p>
 
-                <p>
-                    <label for="tahun-rilis">Tahun Rilis</label>
-                    <input
-                        type="number"
-                        id="tahun-rilis"
-                        name="tahun-rilis"
-                        required
-                    >
-                </p>
+        <p>
+            <label for="tahun-rilis">Tahun Rilis</label>
+            <input
+                type="number"
+                id="tahun-rilis"
+                name="tahun-rilis"
+                min="1950"
+                max="2100"
+                required
+                aria-describedby="error-tahun-rilis"
+            >
+            <small id="error-tahun-rilis" class="error-message" hidden></small>
+        </p>
 
-                <button type="submit">Simpan</button>
-            </form>
-        </section>
+        <button type="submit" id="tombol-simpan" disabled>
+            Simpan
+        </button>
+    </form>
+</section>
 
     </main>
 
