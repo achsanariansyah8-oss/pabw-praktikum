@@ -66,10 +66,10 @@ function buildCard(project) {
 // ============================================
 
 function render(list) {
-    // Kosongkan daftar terlebih dahulu agar kartu tidak berlipat.
+    // Kosongkan daftar agar kartu tidak berlipat.
     projectContainer.replaceChildren();
 
-    // Tangani kondisi jika tidak ada proyek.
+    // Tampilkan pesan jika tidak ada proyek.
     if (list.length === 0) {
         emptyMessage.hidden = false;
         return;
@@ -77,7 +77,7 @@ function render(list) {
 
     emptyMessage.hidden = true;
 
-    // Buat satu kartu untuk setiap proyek.
+    // Tampilkan setiap proyek sebagai kartu.
     list.forEach((project) => {
         projectContainer.append(buildCard(project));
     });
@@ -103,20 +103,20 @@ function markActiveButton(activeButton) {
 filterRow.addEventListener("click", (event) => {
     const button = event.target.closest("button");
 
-    // Abaikan klik yang bukan pada tombol.
+    // Abaikan klik yang bukan pada tombol filter.
     if (!button || !filterRow.contains(button)) {
         return;
     }
 
     const category = button.dataset.category;
 
-    // Pilih proyek sesuai kategori tombol.
+    // Filter proyek sesuai kategori.
     const selected = daftarProyek.filter(
         (project) =>
             category === "all" || project.kategori === category
     );
 
-    // Perbarui tombol aktif dan tampilkan hasil filter.
+    // Perbarui tombol aktif dan daftar kartu.
     markActiveButton(button);
     render(selected);
 
@@ -129,4 +129,12 @@ filterRow.addEventListener("click", (event) => {
 // P9 - B/C. TAMPILKAN SEMUA PROYEK SAAT DIBUKA
 // ============================================
 
+// Tandai tombol Semua sebagai tombol aktif.
+const allButton = filterRow.querySelector('[data-category="all"]');
+
+if (allButton) {
+    markActiveButton(allButton);
+}
+
+// Tampilkan semua proyek ketika halaman dibuka.
 render(daftarProyek);
