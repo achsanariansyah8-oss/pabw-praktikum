@@ -1,30 +1,28 @@
 // ============================================
-// P10 - DATA LAYER: FETCH DAN VALIDASI RESPONSE
+// P10 - SHEET B
+// Async, Await, and Error Handling
 // ============================================
 
 // Alamat API disimpan di satu tempat.
-const URL = "https://jsonplaceholder.typicode.com/posts?_limit=5";
+const URL = 'https://jsonplaceholder.typicode.com/posts?_limit=5';
 
 export async function fetchNews() {
     try {
+        // Mengirim permintaan ke API.
         const response = await fetch(URL);
 
-        // fetch() tidak otomatis error untuk status 404/500.
+        // Memeriksa status HTTP sebelum membaca body.
         if (!response.ok) {
-            throw new Error(`Permintaan API gagal: status ${response.status}`);
+            throw new Error('Status ' + response.status);
         }
 
-        // Membaca response body sebagai data JavaScript.
+        // Membaca respons sebagai JSON.
         const data = await response.json();
 
-        // Worksheet ini merender array, jadi validasi bentuk respons.
-        if (!Array.isArray(data)) {
-            throw new Error("Format data API tidak sesuai: array diharapkan.");
-        }
-
+        // Mengembalikan data ke app.js.
         return data;
     } catch (error) {
-        // Teruskan error agar app.js dapat menampilkan pesan di halaman.
+        // Meneruskan error agar dapat ditangani oleh pemanggil.
         throw error;
     }
 }
