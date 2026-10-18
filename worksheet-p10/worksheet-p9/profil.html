@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Koleksi Game Saya</title>
+
+    <!-- Urutan CSS: token → dasar → layout → komponen → tema -->
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-baris">
+            <input
+                type="checkbox"
+                id="tema"
+                class="pengalih-tema"
+            >
+
+            <label for="tema" class="tombol-tema">
+                Tema gelap
+            </label>
+
+            <h1>Koleksi Game Saya</h1>
+
+            <nav aria-label="Navigasi utama">
+                <ul>
+                    <li>
+                        <a href="#koleksi-game">Koleksi Game</a>
+                    </li>
+                    <li>
+                        <a href="#tambah-game">Tambah Game</a>
+                    </li>
+                    <li>
+                        <a href="#tentang-saya">Tentang Saya</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- KOLEKSI GAME -->
+        <section id="koleksi-game">
+            <h2>Koleksi Game</h2>
+
+            <!-- FILTER: HANYA SATU KELOMPOK -->
+            <div id="filter">
+                <button
+                    type="button"
+                    data-category="all"
+                    class="active"
+                >
+                    Semua
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Web"
+                >
+                    Web
+                </button>
+
+                <button
+                    type="button"
+                    data-category="JavaScript"
+                >
+                    JavaScript
+                </button>
+            </div>
+
+            <!-- TABEL KOLEKSI GAME -->
+            <table>
+                <caption>Daftar Game yang Pernah Saya Mainkan</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Nama Game</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Resident Evil 2 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 3 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 4 Remake</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 5</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 6</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil 7</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil Village</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Resident Evil Requiem (RE9)</th>
+                        <td>Survival Horror</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Last of Us Part I</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Last of Us Part II</th>
+                        <td>Action Adventure</td>
+                        <td>PC</td>
+                        <td>Tamat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- PESAN JIKA FILTER TIDAK MENEMUKAN PROYEK -->
+            <p id="empty-message" hidden>
+                Tidak ada proyek dalam kategori ini.
+            </p>
+
+            <!-- KARTU PROYEK DARI JAVASCRIPT -->
+            <ul id="daftar-proyek"></ul>
+
+            <!-- GAMBAR GAME FAVORIT -->
+            <figure>
+                <img
+                    src="images/game-favorit.jpg"
+                    alt="Tangkapan layar game favorit yang pernah saya mainkan"
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    Game favorit yang pernah saya mainkan.
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- DATA API P10 -->
+        <section id="api-section" aria-labelledby="api-title">
+            <h2 id="api-title">Informasi dari API</h2>
+            <p id="api-status" role="status" aria-live="polite">Menunggu data...</p>
+            <div id="list"></div>
+        </section>
+
+        <!-- FORM TAMBAH GAME -->
+        <section id="tambah-game">
+    <h2>Tambah Game</h2>
+
+    <form id="form-tambah-game" novalidate>
+        <p>
+            <label for="nama-game">Nama Game</label>
+            <input
+                type="text"
+                id="nama-game"
+                name="nama-game"
+                required
+                aria-describedby="error-nama-game"
+            >
+            <small id="error-nama-game" class="error-message" hidden></small>
+        </p>
+
+        <p>
+            <label for="genre">Genre</label>
+            <input
+                type="text"
+                id="genre"
+                name="genre"
+                required
+                aria-describedby="error-genre"
+            >
+            <small id="error-genre" class="error-message" hidden></small>
+        </p>
+
+        <p>
+            <label for="tahun-rilis">Tahun Rilis</label>
+            <input
+                type="number"
+                id="tahun-rilis"
+                name="tahun-rilis"
+                min="1950"
+                max="2100"
+                required
+                aria-describedby="error-tahun-rilis"
+            >
+            <small id="error-tahun-rilis" class="error-message" hidden></small>
+        </p>
+
+        <button type="submit" id="tombol-simpan" disabled>
+            Simpan
+        </button>
+    </form>
+</section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="tentang-saya">
+        <p>
+            Achsan Ariansyah Hidayatullah · 25523011 · 2026
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
+
+</body>
+</html>
