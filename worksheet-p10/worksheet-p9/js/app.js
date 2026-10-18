@@ -215,13 +215,20 @@ async function loadAPI() {
     apiStatus.textContent = "Memuat data...";
     apiList.replaceChildren();
 
+    console.log("Loading state aktif");
+
+    // Memberi waktu agar loading state terlihat.
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
     try {
         const data = await fetchNews();
         renderApiPosts(data);
     } catch (error) {
-        // Failure state: pesan error ditampilkan di halaman.
         apiList.replaceChildren();
-        apiStatus.textContent = `Gagal memuat data: ${error.message}`;
+
+        apiStatus.textContent =
+            `Gagal memuat data: ${error.message}`;
+
         console.error("Gagal memuat data API:", error.message);
     }
 }
